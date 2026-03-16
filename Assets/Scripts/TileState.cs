@@ -1,0 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "TileState", menuName = "ScriptableObjects/TileState", order = 1)]
+public class TileState : ScriptableObject
+{
+    public Color backGroundColor;
+    public Color textColor;
+}
