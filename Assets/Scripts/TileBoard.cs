@@ -13,9 +13,15 @@ public class TileBoard : MonoBehaviour
     public TileState[] tileStates;
     public GameManager gameManager;
 
+    public int gridHeight { get; private set; }
+    public int gridWidth { get; private set; }
+
     private void Awake()
     {
         grid = GetComponentInChildren<TileGrid>();
+        gridHeight = grid.height;
+        gridWidth = grid.width;
+
         tiles = new List<Tile>(16);
     }
 
@@ -64,7 +70,7 @@ public class TileBoard : MonoBehaviour
 
     }
 
-    private void MoveTiles(Vector2Int direction,int startX,int incrementX, int startY, int incrementY)
+    public void MoveTiles(Vector2Int direction,int startX,int incrementX, int startY, int incrementY)
     {
         bool changed = false;
         for (int x = startX; x >= 0 && x < grid.width; x += incrementX)

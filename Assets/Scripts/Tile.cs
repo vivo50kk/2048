@@ -13,11 +13,14 @@ public class Tile : MonoBehaviour
 
     private Image background;
     private TextMeshProUGUI text;
+    private RectTransform rectTransform;
 
     private void Awake()
     {
         background = GetComponent<Image>();
         text = GetComponentInChildren<TextMeshProUGUI>();
+        rectTransform = GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(TileCell.cellSize, TileCell.cellSize);
     }
 
     public void SetState(TileState state,int number)

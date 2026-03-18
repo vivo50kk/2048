@@ -8,4 +8,11 @@ public class TileCell : MonoBehaviour
     public Tile tile { get; set; }
     public bool empty => tile == null;
     public bool occupied => tile != null;
+
+    public static float cellSize { get; private set; }
+
+    private void Awake()
+    {
+        cellSize = GetComponent<RectTransform>().rect.width;
+    }
 }
